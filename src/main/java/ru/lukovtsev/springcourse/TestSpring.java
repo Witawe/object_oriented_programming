@@ -28,6 +28,8 @@ public class TestSpring {
         System.out.println("Хеш функции 1-го и 2-го плеера");
         System.out.println(firstmusicPlayer);
         System.out.println(secondmusicPlayer);
+        
+        //ClassicalMusic classicalPlayer = context.getBean("musicBeanCl", ClassicalMusic.class);
 
         context.close();
 	}

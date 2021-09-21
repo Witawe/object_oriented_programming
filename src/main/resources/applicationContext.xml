@@ -6,19 +6,30 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-
+	
+	<context:component-scan base-package="ru.lukovtsev.springcourse"/>
+	
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="musicBeanCl"
-          class="ru.lukovtsev.springcourse.ClassicalMusic">
+          class="ru.lukovtsev.springcourse.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getClassicalMusic">
     </bean>
     
     <bean id="musicBeanR"
-          class="ru.lukovtsev.springcourse.RockMusic">
+          class="ru.lukovtsev.springcourse.RockMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getRockMusic">
     </bean>
     
     <bean id="musicBeanJ"
-          class="ru.lukovtsev.springcourse.JazzMusic">
+          class="ru.lukovtsev.springcourse.JazzMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getJazzMusic">
     </bean>
 
     <bean id="musicPlayer"
