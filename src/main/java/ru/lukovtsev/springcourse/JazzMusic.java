@@ -13,6 +13,9 @@ public class JazzMusic implements Music{
 		jzsongs.add("So What");
 		jzsongs.add("Take The A Train");
 		jzsongs.add("Take Five");
+		jzsongs.add("Miles Davis");
+		jzsongs.add("Duke Ellington");
+		jzsongs.add("Dave Brubeck");
 	}
 	
 	@Override

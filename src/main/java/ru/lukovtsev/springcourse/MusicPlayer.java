@@ -24,10 +24,34 @@ public class MusicPlayer {
         int randomNumber = random.nextInt(3);
 
         if (gnrMusic == gnrMusic.CLASSICAL) {
-            System.out.println("Для вас звучит классическая музыка: " + classicalMusic.getSongs().get(randomNumber));
+        	if(randomNumber == 0) {
+        		System.out.println("Для вас звучит классическая музыка: " + classicalMusic.getSongs().get(randomNumber) + ". Испольняет: " + classicalMusic.getSongs().get(3));
+        	}
+        	else if(randomNumber == 1) {
+        		System.out.println("Для вас звучит классическая музыка: " + classicalMusic.getSongs().get(randomNumber) + ". Испольняет: " + classicalMusic.getSongs().get(4));
+        	}
+        	else {
+        		System.out.println("Для вас звучит классическая музыка: " + classicalMusic.getSongs().get(randomNumber) + ". Испольняет: " + classicalMusic.getSongs().get(5));
+        	}
         } else if (gnrMusic == gnrMusic.JAZZ){
-            System.out.println("Для вас звучит джазовая музыка: " + jazzMusic.getSongs().get(randomNumber));
+        	if(randomNumber == 0) {
+        		System.out.println("Для вас звучит джазовая музыка: " + jazzMusic.getSongs().get(randomNumber) + ". Испольняет: " + jazzMusic.getSongs().get(3));
+        	}
+        	else if(randomNumber == 1) {
+        		System.out.println("Для вас звучит джазовая музыка: " + jazzMusic.getSongs().get(randomNumber) + ". Испольняет: " + jazzMusic.getSongs().get(4));
+        	}
+        	else {
+        		System.out.println("Для вас звучит джазовая музыка: " + jazzMusic.getSongs().get(randomNumber) + ". Испольняет: " + jazzMusic.getSongs().get(5));
+        	}
         } else 
-        	System.out.println("Для вас звучит рок музыка: " + rockMusic.getSongs().get(randomNumber));
+        	if(randomNumber == 0) {
+        		System.out.println("Для вас звучит рок музыка: " + rockMusic.getSongs().get(randomNumber) + ". Испольняет: " + rockMusic.getSongs().get(3));
+        	}
+        	else if(randomNumber == 1) {
+        		System.out.println("Для вас звучит рок музыка: " + rockMusic.getSongs().get(randomNumber) + ". Испольняет: " + rockMusic.getSongs().get(4));
+        	}
+        	else {
+        		System.out.println("Для вас звучит рок музыка: " + rockMusic.getSongs().get(randomNumber) + ". Испольняет: " + rockMusic.getSongs().get(5));
+        	}
     }
 }

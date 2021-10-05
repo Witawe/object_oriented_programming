@@ -11,8 +11,11 @@ public class ClassicalMusic implements Music{
 	
 	{
 		clsongs.add("Symphony No. 5 in C minor");
-		clsongs.add("Piano Sonata No. 14 in C-sharp minor");
-		clsongs.add("Bagatelle No. 25 in A minor");
+		clsongs.add("Toccata and Fugue in D minor");
+		clsongs.add("Serenade No. 13 in G Major, K 525");
+		clsongs.add("Ludwig van Beethoven");
+		clsongs.add("Johann Sebastian Bach");
+		clsongs.add("Wolfgang Amadeus Mozart");
 	}
 
 	@Override

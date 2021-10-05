@@ -13,6 +13,9 @@ public class RockMusic implements Music{
 		rksongs.add("BOHEMIAN RHAPSODY");
 		rksongs.add("STAIRWAY TO HEAVEN");
 		rksongs.add("FREE BIRD");
+		rksongs.add("QUEEN");
+		rksongs.add("LED ZEPPELIN");
+		rksongs.add("LYNYRD SKYNYRD");
 	}
 	
 	@Override
