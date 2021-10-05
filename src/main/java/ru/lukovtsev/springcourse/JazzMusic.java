@@ -1,28 +1,24 @@
 package ru.lukovtsev.springcourse;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 @Component
 public class JazzMusic implements Music{
-
-	private JazzMusic() {}
+	private List<String> jzsongs = new ArrayList<>();
 	
-	public static JazzMusic getJazzMusic() {
-		return new JazzMusic();
+	{
+		jzsongs.add("So What");
+		jzsongs.add("Take The A Train");
+		jzsongs.add("Take Five");
 	}
 	
-	public void doMyInit() {
-		System.out.println("Doing my initialization in jazz music");
-	}
-	
-	public void doMyDestroy() {
-		System.out.println("Doing my destruction in jazz music");	
-	}
-	
-	public String getSong() {
+	@Override
+	public List<String> getSongs() {
 		// TODO Auto-generated method stub
-		return "Let My People Go";
+		return jzsongs;
 	}
-	
 }
  

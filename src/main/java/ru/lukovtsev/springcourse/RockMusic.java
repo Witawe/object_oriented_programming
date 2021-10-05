@@ -1,27 +1,23 @@
 package ru.lukovtsev.springcourse;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 @Component
 public class RockMusic implements Music{
-
-	private RockMusic() {}
+	private List<String> rksongs = new ArrayList<>();
 	
-	public static RockMusic getRockMusic() {
-		return new RockMusic();
+	{
+		rksongs.add("BOHEMIAN RHAPSODY");
+		rksongs.add("STAIRWAY TO HEAVEN");
+		rksongs.add("FREE BIRD");
 	}
 	
-	public void doMyInit() {
-		System.out.println("Doing my initialization in rock music");
-	}
-	
-	public void doMyDestroy() {
-		System.out.println("Doing my destruction in rock music");	
-	}
-	
-	public String getSong() {
+	@Override
+	public List<String> getSongs() {
 		// TODO Auto-generated method stub
-		return "Wind cries Mary";
+		return rksongs;
 	}
-	
 }

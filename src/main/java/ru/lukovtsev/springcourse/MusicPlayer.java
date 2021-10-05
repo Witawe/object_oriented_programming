@@ -1,27 +1,33 @@
 package ru.lukovtsev.springcourse;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Random;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MusicPlayer {
-	private List<Music> musicList = new ArrayList<>();
+	private ClassicalMusic classicalMusic;
+    private RockMusic rockMusic;
+    private JazzMusic jazzMusic;
 
-    private String name;
-    private int volume;
+    @Autowired
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic, JazzMusic jazzMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
+        this.jazzMusic = jazzMusic;
+    }
 
-    public String getName() { return name; }
+    public void playMusic(GenerateMusic gnrMusic) {
+        Random random = new Random();
 
-    public void setName(String name) { this.name = name; }
+        int randomNumber = random.nextInt(3);
 
-    public int getVolume() { return volume; }
-
-    public void setVolume(int volume) { this.volume = volume; }
-
-    public void setMusic(List<Music> musicList) { this.musicList = musicList; }
-
-    public void playMusic() {
-        for (Music music : musicList) {
-        	System.out.println("Playing: " + music.getSong());
-        }
+        if (gnrMusic == gnrMusic.CLASSICAL) {
+            System.out.println("Для вас звучит классическая музыка: " + classicalMusic.getSongs().get(randomNumber));
+        } else if (gnrMusic == gnrMusic.JAZZ){
+            System.out.println("Для вас звучит джазовая музыка: " + jazzMusic.getSongs().get(randomNumber));
+        } else 
+        	System.out.println("Для вас звучит рок музыка: " + rockMusic.getSongs().get(randomNumber));
     }
 }
