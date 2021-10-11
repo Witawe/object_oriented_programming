@@ -3,25 +3,27 @@ package ru.lukovtsev.springcourse;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.stereotype.Component;
 
 @Component
 public class JazzMusic implements Music{
-	private List<String> jzsongs = new ArrayList<>();
-	
-	{
-		jzsongs.add("So What");
-		jzsongs.add("Take The A Train");
-		jzsongs.add("Take Five");
-		jzsongs.add("Miles Davis");
-		jzsongs.add("Duke Ellington");
-		jzsongs.add("Dave Brubeck");
+
+	@PostConstruct
+	public void doMyInit() {
+		System.out.println("Doing my initialization");
 	}
 	
-	@Override
-	public List<String> getSongs() {
+	@PreDestroy
+	public void domyDestroy(){
+		System.out.println("Doing my destroy");
+	}
+	
+	public  String getSong() {
 		// TODO Auto-generated method stub
-		return jzsongs;
+		return "Take five";
 	}
 }
  

@@ -1,41 +1,15 @@
 package ru.lukovtsev.springcourse;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestSpring {
 	public static void main(String[] args) {
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-					"applicationContext.xml"
-		);
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 		
-		/*MusicPlayer firstmusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-		MusicPlayer secondmusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+		MusicPlayer  musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 		
-		boolean comparison = firstmusicPlayer == secondmusicPlayer;
-		System.out.println("1-ый музыкальный плеер:");
-        firstmusicPlayer.playMusic();
-        System.out.print("Громкость 1-го плеера: ");
-        System.out.println(firstmusicPlayer.getVolume());
-        System.out.println("");
-        
-        System.out.println("2-ой музыкальный плеер:");
-        secondmusicPlayer.playMusic();
-        System.out.print("Громкость 2-го плеера: ");
-        secondmusicPlayer.setVolume(5);
-        System.out.println(secondmusicPlayer.getVolume());
-        
-        System.out.println("");
-        System.out.println("Хеш функции 1-го и 2-го плеера");
-        System.out.println(firstmusicPlayer);
-        System.out.println(secondmusicPlayer);
-        
-        //ClassicalMusic classicalPlayer = context.getBean("musicBeanCl", ClassicalMusic.class);*/
-		
-		MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-		
-		musicPlayer.playMusic(GenerateMusic.CLASSICAL);
-		musicPlayer.playMusic(GenerateMusic.JAZZ);
-		musicPlayer.playMusic(GenerateMusic.ROCK);
+		System.out.println(musicPlayer.playMusic());
 		
         context.close();
 	}

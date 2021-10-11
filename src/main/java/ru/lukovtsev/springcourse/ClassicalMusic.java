@@ -3,24 +3,24 @@ package ru.lukovtsev.springcourse;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ClassicalMusic implements Music{
-	private List<String> clsongs = new ArrayList<>();
 	
-	{
-		clsongs.add("Symphony No. 5 in C minor");
-		clsongs.add("Toccata and Fugue in D minor");
-		clsongs.add("Serenade No. 13 in G Major, K 525");
-		clsongs.add("Ludwig van Beethoven");
-		clsongs.add("Johann Sebastian Bach");
-		clsongs.add("Wolfgang Amadeus Mozart");
+	@PostConstruct
+	public void doMyInit() {
+		System.out.println("Doing my initialization");
 	}
-
-	@Override
-	public List<String> getSongs() {
-		// TODO Auto-generated method stub
-		return clsongs;
+	
+	@PreDestroy
+	public void domyDestroy(){
+		System.out.println("Doing my destroy");
 	}
+	
+	public String getSong() {return "Hungarian Rhapsody";}
 }
